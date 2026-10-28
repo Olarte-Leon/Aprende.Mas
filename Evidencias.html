@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprende +</title>
+    <link rel="stylesheet" href="dl.css">
+    <meta name="viewport"
+    content="width=device-width", initial-scale="1.0">
+</head>
+<body>
+    <div class="contenedor">
+  <img src="LOGO.png" alt="Apende +" class="mi-imagen">
+</div>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <head>
+    <meta charset="UTF-8">
+    <title>Menu con Submenús</title>
+    <link rel="stylesheet" href="dl.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<div class="redes">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+    <nav class="menu">
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            
+                <li class="submenu">
+                <a href="Nosotros.html">Nosotros</a>
+                
+            </li>
+
+            <li class="submenu">
+                <a href="Solución Tecnologica.html">Solución Tecnológica</a>
+                <ul>
+
+                </ul>
+            </li>
+            <li><a href="#">Evidencias</a></li>
+            <li><a href="Contactanos.html">Contactanos</a></li>
+        </ul>
+    </nav>
+     <div class="banner">
+    <img src="banner4.png" alt="">
+     <div class="background-image"></div>
+    <script>
+const bg = document.querySelector('.background-image');
+
+// Cambiamos el cálculo para que el movimiento sea más suave y controlado
+window.addEventListener('mousemove', (e) => {
+  // Calcula el porcentaje de movimiento basándose en el total de la pantalla
+  const mouseX = (e.clientX / window.innerWidth) * 5; 
+  const mouseY = (e.clientY / window.innerHeight) * 5;
+  
+  // Aplica el desplazamiento negativo para lograr el efecto de profundidad (paralaje)
+  bg.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+});
+</script>
+<div class="galeria">
+    <!-- Nuevo contenedor para alinear lado a lado -->
+    <div class="contenedor-horizontal">
+        <img id="imagen" src="LOGO.png" alt="Evidencia">
+        <p id="texto"></p>
+    </div>
+
+    <!-- Los botones se quedan abajo -->
+    <div class="controles">
+        <button id="anterior">←</button>
+        <button id="siguiente">→</button>
+    </div>
+</div>
+
+
+<script>const imagen = document.getElementById("imagen");
+const texto = document.getElementById("texto");
+
+const anterior = document.getElementById("anterior");
+const siguiente = document.getElementById("siguiente");
+
+const contenido = [
+    {
+        imagen: "evidencia1.png",
+        texto: "La exposición nos permitió presentar nuestro proyecto de técnicas de estudio a otros estudiantes. Pudimos explicar la importancia de tener buenos hábitos académicos y compartir diferentes estrategias para estudiar. Además, observamos que los estudiantes tenían diferentes formas de aprender y que algunos necesitaban mejorar la organización de su tiempo."
+    },
+
+    {
+        imagen: "evidencia2.png",
+        texto: "La conversación nos ayudó a conocer de manera más cercana la experiencia de un estudiante con sus hábitos de estudio. A través de sus respuestas identificamos algunas dificultades y comprendimos que no todos utilizan las mismas técnicas para aprender. Esta actividad nos permitió relacionar nuestro proyecto con una situación real.Las técnicas de estudio ayudan a los estudiantes a organizar mejor su tiempo y mejorar su aprendizaje."
+    },
+
+    {
+        imagen: "evidencia34.png",
+        texto: "La encuesta nos permitió recopilar información sobre los hábitos y métodos de estudio de los estudiantes. Con las respuestas pudimos identificar qué técnicas conocen, cuáles utilizan y qué dificultades presentan al estudiar. Esta información sirve como evidencia para comprender mejor la problemática que estamos trabajando.Una buena organización permite aprovechar mejor el tiempo dedicado al estudio."
+    },
+
+    {
+        imagen: "evidencia32.png",
+        texto: "El Kahoot permitió comprobar de una manera dinámica si los estudiantes habían comprendido la información presentada sobre las técnicas de estudio. La actividad generó participación e interés y nos permitió reforzar algunos conceptos importantes. También demostramos que el aprendizaje puede realizarse mediante actividades interactivas y divertidas."
+    },
+
+     {
+        imagen: "evidencia33.png",
+        texto: ""
+    },
+    {
+        imagen: "evidencia31.png",
+        texto: ""
+    },
+     {
+        imagen: "evidenciak.jpeg",
+        texto: "El Kahoot permitió comprobar de una manera dinámica si los estudiantes habían comprendido la información presentada sobre las técnicas de estudio. La actividad generó participación e interés y nos permitió reforzar algunos conceptos importantes. También demostramos que el aprendizaje puede realizarse mediante actividades interactivas y divertidas."
+    },
+];
+
+let posicion = 0;
+
+
+// Mostrar contenido
+function mostrarContenido() {
+    imagen.src = contenido[posicion].imagen;
+    texto.textContent = contenido[posicion].texto;
+}
+
+
+// Botón siguiente
+siguiente.addEventListener("click", function() {
+
+    posicion++;
+
+    if (posicion >= contenido.length) {
+        posicion = 0;
+    }
+
+    mostrarContenido();
+});
+
+
+// Botón anterior
+anterior.addEventListener("click", function() {
+
+    posicion--;
+
+    if (posicion < 0) {
+        posicion = contenido.length - 1;
+    }
+
+    mostrarContenido();
+});
+</script>
+</body>
+</html>
